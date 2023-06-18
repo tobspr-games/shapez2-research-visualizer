@@ -1,6 +1,6 @@
-# Shapez 2 Belt Simulation Tool
+# Shapez 2 Belt Research Visualier
 
-This is a partial port of the Belt Simulation in <a href="https://store.steampowered.com/app/2162800/shapez_2/" target="_blank">Shapez 2</a> in TypeScript, and can be used to both understand and debug the simulation. Feel free to report bugs / suggestions / feedback in the <a href="https://discord.com/invite/bvq5uGxW8G" target="_blank">Discord</a>!
+This is a tool to display the <a href="https://store.steampowered.com/app/2162800/shapez_2/" target="_blank">Shapez 2</a> research tree. Feel free to report bugs / suggestions / feedback in the <a href="https://discord.com/invite/bvq5uGxW8G" target="_blank">Discord</a>!
 
 ## Requirements
 

@@ -1,0 +1,104 @@
+@use "sass:math";
+@import "./reset.scss";
+
+body {
+    background: #111;
+    color: #fff;
+    font-size: 14px;
+    font-family: "Roboto", "Arial", sans-serif;
+}
+
+.levels {
+    width: 10000px;
+    height: 3000px;
+    background: #333;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    border: 1px solid #777;
+    overflow: hidden;
+}
+
+.level {
+    background: #6f787b;
+    padding: 7px;
+    border-radius: 5px;
+    position: absolute;
+    width: 220px;
+    z-index: 100;
+    box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.5);
+
+    &[data-milestone="true"] {
+        background: #39f;
+        &::after {
+            content: "";
+            width: 2px;
+            height: 10000px;
+            background: rgba(#39f, 0.5);
+            position: absolute;
+            top: -5000px;
+            left: -120px;
+            z-index: -10;
+            user-select: none;
+        }
+
+        box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.5), 0 3px 35px 0 rgba(#39f, 0.3);
+    }
+
+    &[data-category="RCTransport"] {
+        background: #758875;
+    }
+    &[data-category="RCCutStack"] {
+        background: #88757f;
+    }
+    &[data-category="RCIslands"] {
+        background: #867366;
+    }
+    &[data-category="RCFluids"] {
+        background: #666786;
+    }
+
+    .id {
+        font-size: 0.8em;
+        color: rgba(#fff, 0.5);
+    }
+
+    .title {
+        font-size: 1.5em;
+        display: flex;
+        margin-top: 4px;
+        align-items: center;
+        .milestoneIndex {
+            margin-right: 5px;
+            font-weight: bold;
+        }
+    }
+
+    .desc {
+        color: #000;
+        opacity: 0.5;
+        display: none;
+    }
+
+    .goal {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .dependency {
+        color: rgba(#fff, 0.5);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+        display: flex;
+        overflow: hidden;
+    }
+
+    .unlock {
+        color: rgb(118, 230, 255);
+    }
+
+    .milestoneReq {
+        color: #000;
+    }
+}

@@ -2,7 +2,6 @@
 .shapeDisplay {
     width: 64px;
     height: 64px;
-    background: red;
     canvas {
         width: 100%;
         height: 100%;

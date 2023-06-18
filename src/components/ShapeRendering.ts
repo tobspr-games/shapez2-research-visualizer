@@ -184,7 +184,7 @@ export function RenderShape(canvas, shapeKey) {
     const w = 512;
     const h = 512;
     const dpi = 1;
-    context.fillRect(0, 0, w, h);
+    context.clearRect(0, 0, w, h);
 
     context.translate((w * dpi) / 2, (h * dpi) / 2);
     context.scale((dpi * w) / 28, (dpi * h) / 28);

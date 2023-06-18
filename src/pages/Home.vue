@@ -5,7 +5,7 @@
         .title
             .milestoneIndex(v-if="node.LevelIndex >= 0") M{{ node.LevelIndex }}
             span(v-html="node.Title")
-        .category(v-if="node.CategoryId") {{ node.CategoryId }}
+        //- .category(v-if="node.CategoryId") {{ node.CategoryId }}
         .desc {{ node.Description }}
         .goal
             Shape.shape(v-if="node.GoalShape", :shape="node.GoalShape")
@@ -15,7 +15,6 @@
         .unlock(v-for="unlock in node.Unlocks") {{ unlock }}
         template(v-if="node.Dependencies")
             .dependency(v-for="dep in node.Dependencies") Requires {{ dep }}
-        .dependency Requires Milestone {{ node.DependentLevelIndex }}
 </template>
 
 <script setup lang="ts">

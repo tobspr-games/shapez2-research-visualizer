@@ -7,7 +7,11 @@
             span(v-html="node.Title")
         .category(v-if="node.CategoryId") {{ node.CategoryId }}
         .desc {{ node.Description }}
-        .goal {{ node.GoalAmount }} x {{ node.GoalShape }}
+        .goal
+            Shape.shape(v-if="node.GoalShape", :shape="node.GoalShape")
+            .amount {{ node.GoalAmount }}
+            .key {{ node.GoalShape }}
+
         .unlock(v-for="unlock in node.Unlocks") {{ unlock }}
         template(v-if="node.Dependencies")
             .dependency(v-for="dep in node.Dependencies") Requires {{ dep }}
@@ -19,7 +23,7 @@ import { reactive, ref } from "vue";
 // import type { SerializedBeltLane } from "@/simulation/BeltLane";
 
 import research from "@/data/research-metadata.json";
-
+import Shape from "@/components/Shape.vue";
 let categoryUpgradePositions: any = {};
 let categoryQoLPositions: any = {};
 
@@ -54,7 +58,7 @@ function NodePos(node: any) {
         if (typeof categoryUpgradePositions[node.CategoryId] === "undefined") {
             categoryUpgradePositions[node.CategoryId] = Object.keys(categoryUpgradePositions).length;
         }
-        y = 2 + categoryUpgradePositions[node.CategoryId];
+        y = 1.5 + categoryUpgradePositions[node.CategoryId];
     } else {
         // qol
         if (typeof categoryQoLPositions[node.CategoryId] === "undefined") {
@@ -63,7 +67,7 @@ function NodePos(node: any) {
         y = -1 - categoryQoLPositions[node.CategoryId];
     }
 
-    return { left: 250 + node.DependentLevelIndex * 250 + "px", top: 1000 + y * 200 + "px" };
+    return { left: 250 + node.DependentLevelIndex * 250 + "px", top: 1000 + y * 240 + "px" };
 }
 
 function NodeStyle(node: any) {

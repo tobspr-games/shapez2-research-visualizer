@@ -83,6 +83,33 @@ body {
     .goal {
         margin-top: 10px;
         margin-bottom: 10px;
+        display: grid;
+        grid-template-columns: 64px 1fr;
+        column-gap: 10px;
+        grid-template-rows: 1fr 30px;
+
+        background: rgba(#000, 0.2);
+        border-radius: 10px;
+        .shape {
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
+        }
+        .amount {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            font-size: 1.7em;
+            align-self: center;
+        }
+        .key {
+            font-family: monospace;
+            font-size: 0.8em;
+            grid-row: 2 / 3;
+            opacity: 0.5;
+            overflow-wrap: break-word;
+            display: flex;
+            overflow: hidden;
+            word-wrap: break-word;
+        }
     }
 
     .dependency {
